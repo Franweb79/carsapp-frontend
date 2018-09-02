@@ -1,0 +1,56 @@
+
+<br/>
+
+<div  *ngIf="!_view_product.productoAMostrar;else plantillaProducto">Loading product...</div>
+
+<ng-template #plantillaProducto>
+
+    
+    <div class="col-lg-3">
+
+        <div *ngIf="_view_product.productoAMostrar.imagen !=null;else noImageTemplate">
+
+            <img src="{{_view_product.imageServerUrl}}/{{_view_product.productoAMostrar.imagen}}" alt="product_image" class="imageStyle"/>
+        </div>
+      
+        <ng-template #noImageTemplate>
+      
+            <div>
+      
+                <img src="{{_view_product.imageServerUrl}}/no-image-available.JPG" alt="no_image" class="imageStyle"/>
+      
+      
+            </div>
+        </ng-template>  
+
+    </div>
+
+    <div class="col-lg-9">
+
+        <h1>{{_view_product.productoAMostrar.nombre}}</h1>
+
+        
+
+        <p *ngIf="_view_product.productoAMostrar.precio != 0;else noPriceTemplate" ><strong>{{_view_product.productoAMostrar.precio}} €.</strong></p>
+        
+        <ng-template #noPriceTemplate>
+
+            <p><strong>No stock available.</strong></p>
+
+        </ng-template>
+
+      
+        <p>{{_view_product.productoAMostrar.descripcion}}</p>
+
+    </div>
+
+   
+
+ 
+
+  
+
+
+
+</ng-template>
+

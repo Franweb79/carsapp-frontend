@@ -1,0 +1,75 @@
+<h3> {{title}}</h3>
+ 
+
+
+    <div *ngIf="_productos.arrayListProducts.length==0 && _productos.isError==false">Loading data...</div>
+
+    <div class="row">
+      
+      <div class="col-lg-3" *ngFor="let product of _productos.arrayListProducts">
+
+          <div class="thumbnail borderedDiv">
+
+            <div *ngIf="product.imagen" class="imageStyle ">
+              <img src="{{_productos.imageServerUrl + product.imagen}}" class="imageStyle" />
+            </div>
+            <div *ngIf="!product.imagen" class="imageStyle">
+                <img src="{{_productos.imageServerUrl}}default.PNG" class="imageStyle" />
+            </div>
+
+              <div class="caption">
+
+                  <div><h3>{{product.nombre}}</h3></div>
+
+                  <p *ngIf="product.precio != 0;else noPriceTemplate" ><strong>{{product.precio}} €.</strong></p>
+        
+                  <ng-template #noPriceTemplate>
+          
+                      <p><strong>No stock available.</strong></p>
+          
+                  </ng-template>
+
+
+                  <p *ngIf="deleteThisObjectConfirm != product.id_producto;else confirmDeleteTemplate" id="buttons">
+                  <!--<p>-->
+                      <a [routerLink]="['/view-product',product.id_producto]" class ="btn btn-md btn-primary">View</a>
+                      <a [routerLink]="['/edit-product',product.id_producto]" class ="btn btn-md btn-warning">Edit</a>
+
+                      <a (click)="showConfirmationToDelete(product.id_producto)" class ="btn btn-md btn-danger">Delete</a>
+                      <!--<a [routerLink]="['/delete-product',product.id_producto]" class ="btn btn-md btn-danger">Delete</a>-->
+
+                  </p>
+
+                  <ng-template #confirmDeleteTemplate>
+
+                    <p>
+                        
+                        <strong> Do you really want to delete it?</strong>
+
+                       <a [routerLink]="['/delete-product',product.id_producto]" class ="btn btn-md btn-primary">Yes</a>
+
+                      <a  (click)="cancelConfirmationToDelete()" class ="btn btn-md btn-danger">No</a>
+
+                    </p>
+                  </ng-template>
+                  
+              </div><!--caption-->
+            
+
+          </div><!--thumbnail-->
+
+      
+               
+            
+         
+
+      </div><!--col-->
+
+
+    </div><!--row-->
+
+   
+
+    <div *ngIf="_productos.isError==true">ERROR CONNECTING TO THE DATABASE</div>
+
+

@@ -1,0 +1,80 @@
+<p>
+
+  {{_createProduct.errorMessage}}
+
+  
+</p>
+
+<h3>{{title}}</h3>
+
+<!--required doent work
+https://stackoverflow.com/questions/44213789/angular-validation-with-required-not-working
+
+
+-->
+
+
+<form #formCreateProduct="ngForm" (ngSubmit)="_createProduct.createProduct()" class="col-lg-6" id="form-crear-producto-id">
+
+    <div class="form-group">
+
+      <label for="nombreLabel"> Name of the new product:
+       
+        <span *ngIf="!nombre.valid && nombre.touched && _createProduct.productToInsert.nombre.length != 0" class="label label-danger"> 3-15 characters please</span>
+
+      </label>  
+
+      <!--must write [(ngModel)]="blabla" in order to mae it work #nombre="ngModel"-->
+
+      <input type="text" class="form-control" name="name" #nombre="ngModel" pattern =".{3,15}"[(ngModel)]="_createProduct.productToInsert.nombre" required /> <br/>
+    
+
+    
+    </div>
+
+    <div class="form-group">
+
+      <label for="priceLabel">Price ( € ): (please decimals with a dot. Ex:29.5)
+
+        <span *ngIf="!precio.valid && precio.touched && _createProduct.productToInsert.precio.length != 0" class="label label-danger">Price is not valid. At least one number please, and only numbers</span>
+
+      </label>
+
+      <input type="text"  class="form-control" name="price" #precio="ngModel" pattern="[0-9.]+" [(ngModel)]="_createProduct.productToInsert.precio" />  <br/>
+
+    
+    </div>
+
+
+    <div class="form-group">
+    
+      <label for="imageLabel">Image:</label>
+
+     <!--file doesnt suport the ngmodel-->
+      <input type="file"  class="form-control" name="imagen" (change)="_uploadFile.fileChangeEvent($event)" [(ngModel)]="_createProduct.productToInsert.imagen" /> <br/>
+
+    </div>
+    
+
+    <div class="form-group">
+
+      <label for="descriptionLabel">Description:</label>
+
+     <span *ngIf="!descripcion.valid && descripcion.touched && _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
+
+
+      <div [ngClass]="{'TopLength': _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length==300}">{{_createProduct.productToInsert.descripcion.length}}/300</div>
+
+      <textarea name="description" class="form-control" #descripcion="ngModel" pattern=".{10,300}" [(ngModel)]="_createProduct.productToInsert.descripcion" cols="40" rows="3"></textarea> <br/>
+
+
+     </div>
+      
+      
+      
+      <input type="submit" value={{title}}  [disabled]="formCreateProduct.invalid" class ="btn btn-lg btn-success" /> <br/>
+
+</form>
+
+
+
