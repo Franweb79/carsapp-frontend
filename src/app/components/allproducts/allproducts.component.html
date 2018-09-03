@@ -1,4 +1,4 @@
-<h3> {{title}}</h3>
+<h3 [ngStyle]="{'text-align':'center'}"> {{title}}</h3>
 
 <mat-progress-spinner></mat-progress-spinner>
  
@@ -35,10 +35,10 @@
 
                   <p *ngIf="deleteThisObjectConfirm != product.id_producto;else confirmDeleteTemplate" id="buttons">
                   <!--<p>-->
-                      <a [routerLink]="['/view-product',product.id_producto]" class ="btn btn-md btn-primary">View</a>
-                      <a [routerLink]="['/edit-product',product.id_producto]" class ="btn btn-md btn-warning">Edit</a>
+                      <button mat-raised-button [routerLink]="['/view-product',product.id_producto]" class="viewButton">View</button>
+                      <button mat-raised-button [routerLink]="['/edit-product',product.id_producto]" class ="editButton">Edit</button>
 
-                      <a (click)="showConfirmationToDelete(product.id_producto)" class ="btn btn-md btn-danger">Delete</a>
+                      <button mat-raised-button (click)="showConfirmationToDelete(product.id_producto)" class="deleteButton">Delete</button>
                       <!--<a [routerLink]="['/delete-product',product.id_producto]" class ="btn btn-md btn-danger">Delete</a>-->
 
                   </p>

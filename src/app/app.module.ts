@@ -5,6 +5,7 @@ import{HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 
 import {MatButtonModule} from '@angular/material';
@@ -48,6 +49,7 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    AngularFontAwesomeModule,
     MatButtonModule,
     MatSidenavModule,
     MatProgressSpinnerModule,

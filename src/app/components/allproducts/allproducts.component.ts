@@ -11,9 +11,12 @@ import {ProductosService} from '../../services/productos.service';
 })
 export class AllproductsComponent implements OnInit {
 
+
   private _title:string;
 
   private _deleteThisObjectConfirm:number;
+
+  private _currentDate:Date;
 
 
 
@@ -21,7 +24,9 @@ export class AllproductsComponent implements OnInit {
               private _router:Router,
               public _productos:ProductosService) {
 
-    this.title="Product list";/*we are using the setter, not assigning the property!!*/
+    this.currentDate=new Date();
+
+    this.title="Car List, on "+this.currentDate.toLocaleDateString();/*we are using the setter, not assigning the property!!*/
     this.deleteThisObjectConfirm=0;
     this._productos.url;
    // this._productos.imageServerUrl;
@@ -70,6 +75,14 @@ export class AllproductsComponent implements OnInit {
   public get deleteThisObjectConfirm()
   {
     return this._deleteThisObjectConfirm;
+  }
+
+  get currentDate(): Date {
+    return this._currentDate;
+  }
+
+  set currentDate(value: Date) {
+    this._currentDate = value;
   }
 
 }
