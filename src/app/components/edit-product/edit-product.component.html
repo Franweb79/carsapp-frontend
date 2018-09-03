@@ -53,12 +53,12 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
     <div class="form-group">
 
 
-     <span *ngIf="!descripcion.valid && descripcion.touched && productToUpdate.descripcion != NULL && productToUpdate.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
+     <span *ngIf="!descripcion.valid && descripcion.touched && productToUpdate.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
 
 
 
       <mat-form-field class="col-lg-12">
-       <textarea name="description" matInput placeholder="Write a short description please" #descripcion="ngModel" pattern=".{10,300}" [(ngModel)]="productToUpdate.descripcion" cols="40" rows="3" required></textarea> <br/>
+       <textarea name="description" matInput placeholder="Write a short description please" #descripcion="ngModel" maxlength="300" pattern=".{10,300}" [(ngModel)]="productToUpdate.descripcion" cols="40" rows="3" required></textarea> <br/>
       </mat-form-field>
 
       <div [ngClass]="{'TopLength': productToUpdate.descripcion != NULL && productToUpdate.descripcion.length==300}">{{productToUpdate.descripcion.length}}/300</div>

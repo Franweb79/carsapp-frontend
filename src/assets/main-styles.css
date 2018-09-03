@@ -96,3 +96,7 @@
     overflow:hidden;
 }
 
+/*for description fields*/
+.TopLength{
+  color:red;
+}

@@ -31,16 +31,21 @@
 
         
 
-        <p *ngIf="_view_product.productoAMostrar.precio != 0;else noPriceTemplate" ><strong>{{_view_product.productoAMostrar.precio}} €.</strong></p>
+        <h3><strong>{{_view_product.productoAMostrar.precio}} €.</strong></h3>
         
-        <ng-template #noPriceTemplate>
+      <mat-divider [ngStyle]="{'color':'#5E35B1'}" ></mat-divider>
 
-            <p><strong>No stock available.</strong></p>
-
-        </ng-template>
+      <br/>
+      <br/>
 
       
-        <p>{{_view_product.productoAMostrar.descripcion}}</p>
+      <div [ngStyle]="{'word-wrap':'break-word','font-size':'1.5em'}">{{_view_product.productoAMostrar.descripcion}}</div>
+
+      <br/>
+      <br/>
+
+      <button mat-raised-button color="primary" routerLink="/all-products">Back to List</button>
+
 
     </div>
 

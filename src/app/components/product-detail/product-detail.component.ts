@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
   public id_producto:number;
 
   constructor(
-              private _view_product:ViewProductService,
+              public _view_product:ViewProductService,
               private _route:ActivatedRoute, 
               private _router:Router) { 
 

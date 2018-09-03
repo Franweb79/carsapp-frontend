@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 import {MatButtonModule} from '@angular/material';
@@ -55,7 +56,8 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatFileUploadModule
+    MatFileUploadModule,
+    MatDividerModule
 
 
   ],
