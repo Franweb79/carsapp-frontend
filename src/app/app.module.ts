@@ -12,6 +12,7 @@ import {MatSidenavModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -52,6 +53,7 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatFileUploadModule
 
 
   ],
