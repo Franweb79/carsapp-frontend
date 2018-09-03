@@ -28,7 +28,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
       </label>
 
       <mat-form-field class="col-lg-12">
-        <input matInput placeholder="Name and model of your car" type="text"  name="name" #nombre="ngModel" pattern =".{3,15}"[(ngModel)]="_createProduct.productToInsert.nombre" required>
+        <input matInput placeholder="Name and model of your car" type="text"  name="name" #nombre="ngModel" pattern =".{3,15}"[(ngModel)]="_createProduct.productToInsert.nombre" required />
       </mat-form-field>
 
       <!--must write [(ngModel)]="blabla" in order to mae it work #nombre="ngModel"-->
@@ -48,41 +48,47 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
       <mat-form-field class="col-lg-12">
 
-        <input type="text" matInput placeholder="Price ( € ): (please decimals with a dot. Ex:29.5)"  name="price" #precio="ngModel" pattern="[0-9.]+" [(ngModel)]="_createProduct.productToInsert.precio" />  <br/>
+        <input type="text" matInput placeholder="Price ( € ): (please decimals with a dot. Ex:29.5)"  name="price" #precio="ngModel" pattern="[0-9.]+" [(ngModel)]="_createProduct.productToInsert.precio" required />  <br/>
 
       </mat-form-field>
     
     </div>
 
 
-    <div class="form-group">
+  <div class="form-group">
+
+
+
+    <!--file doesnt suport the ngmodel-->
+
+      <input type="file"  placeholder="Upload image" name="imagen" (change)="_uploadFile.fileChangeEvent($event)" [(ngModel)]="_createProduct.productToInsert.imagen" required /> <br/>
+
+  </div>
     
-      <label>Image:</label>
-
-     <!--file doesnt suport the ngmodel-->
-      <input type="file"  class="form-control" name="imagen" (change)="_uploadFile.fileChangeEvent($event)" [(ngModel)]="_createProduct.productToInsert.imagen" /> <br/>
-
-    </div>
-    
 
     <div class="form-group">
 
-      <label>Description:</label>
 
      <span *ngIf="!descripcion.valid && descripcion.touched && _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
 
 
       <div [ngClass]="{'TopLength': _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length==300}">{{_createProduct.productToInsert.descripcion.length}}/300</div>
 
-      <textarea name="description" class="form-control" #descripcion="ngModel" pattern=".{10,300}" [(ngModel)]="_createProduct.productToInsert.descripcion" cols="40" rows="3"></textarea> <br/>
+      <mat-form-field class="col-lg-12">
+       <textarea matInput placeholder="Write a short description please" name="description"  #descripcion="ngModel" pattern=".{10,300}" [(ngModel)]="_createProduct.productToInsert.descripcion" cols="40" rows="3" required></textarea> <br/>
+      </mat-form-field>
 
 
-     </div>
-      
-      
-      
-      <input type="submit" value={{title}}  [disabled]="formCreateProduct.invalid" class ="btn btn-lg btn-success" /> <br/>
+    </div>
 
+
+
+  <button type="submit" mat-raised-button color="primary"   [disabled]="formCreateProduct.invalid">Sell my car now!</button><br/>
+
+
+
+
+      
 </form>
 
 

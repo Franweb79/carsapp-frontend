@@ -21,7 +21,7 @@ export class CreateproductComponent implements OnInit {
  
   constructor(
              public _createProduct:CreateProductService,
-             private _uploadFile:UploadFileService) { 
+             public _uploadFile:UploadFileService) {
 
               this.title="Create new product";
 
