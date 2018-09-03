@@ -20,7 +20,7 @@ export class CreateproductComponent implements OnInit {
  
  
   constructor(
-             private _createProduct:CreateProductService,
+             public _createProduct:CreateProductService,
              private _uploadFile:UploadFileService) { 
 
               this.title="Create new product";

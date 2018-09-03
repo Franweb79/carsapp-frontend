@@ -1,3 +1,19 @@
+#menuId{
+  background: #5E35B1;
+  color:#fff;
+  text-align: center;
+}
+
+
+#headerId{
+  background: #311B92;
+  color:#fff;
+  margin-bottom:0;
+  padding:1em;
+  text-align: center;
+  line-height: 1em;
+
+}
 #content{
     margin-top:30px;
     border:1px solid #eee;
@@ -59,7 +75,7 @@
 }
 
 .activeRouteClass{
-    background: #00BFFF;
+    background: #311B92;
    border-bottom:4px solid #FF00FF;
 }
 

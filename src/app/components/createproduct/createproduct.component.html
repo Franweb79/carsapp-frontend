@@ -7,6 +7,13 @@
 
 <h3>{{title}}</h3>
 
+<form>
+
+  <mat-form-field>
+  <input matInput placeholder="Input">
+</mat-form-field>
+</form>
+
 <!--required doent work
 https://stackoverflow.com/questions/44213789/angular-validation-with-required-not-working
 
@@ -18,7 +25,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
     <div class="form-group">
 
-      <label for="nombreLabel"> Name of the new product:
+      <label> Name of the new product:
        
         <span *ngIf="!nombre.valid && nombre.touched && _createProduct.productToInsert.nombre.length != 0" class="label label-danger"> 3-15 characters please</span>
 
@@ -34,7 +41,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
     <div class="form-group">
 
-      <label for="priceLabel">Price ( € ): (please decimals with a dot. Ex:29.5)
+      <label>Price ( € ): (please decimals with a dot. Ex:29.5)
 
         <span *ngIf="!precio.valid && precio.touched && _createProduct.productToInsert.precio.length != 0" class="label label-danger">Price is not valid. At least one number please, and only numbers</span>
 
@@ -48,7 +55,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
     <div class="form-group">
     
-      <label for="imageLabel">Image:</label>
+      <label>Image:</label>
 
      <!--file doesnt suport the ngmodel-->
       <input type="file"  class="form-control" name="imagen" (change)="_uploadFile.fileChangeEvent($event)" [(ngModel)]="_createProduct.productToInsert.imagen" /> <br/>
@@ -58,7 +65,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
     <div class="form-group">
 
-      <label for="descriptionLabel">Description:</label>
+      <label>Description:</label>
 
      <span *ngIf="!descripcion.valid && descripcion.touched && _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
 

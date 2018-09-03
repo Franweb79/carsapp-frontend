@@ -4,7 +4,14 @@ import{AppRoutingModule} from './app-routing';
 import{HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
+import {MatButtonModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -39,7 +46,14 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
     HttpModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+
 
   ],
   providers: [appRoutingProviders],

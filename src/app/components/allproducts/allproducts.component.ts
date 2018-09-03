@@ -19,7 +19,7 @@ export class AllproductsComponent implements OnInit {
 
   constructor(private _route:ActivatedRoute, 
               private _router:Router,
-              private _productos:ProductosService) {
+              public _productos:ProductosService) {
 
     this.title="Product list";/*we are using the setter, not assigning the property!!*/
     this.deleteThisObjectConfirm=0;
