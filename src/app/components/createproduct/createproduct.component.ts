@@ -23,7 +23,7 @@ export class CreateproductComponent implements OnInit {
              public _createProduct:CreateProductService,
              public _uploadFile:UploadFileService) {
 
-              this.title="Create new product";
+              this.title="Publish your advertisement";
 
             //  this.productToInsert=new Producto("bucerca","asdasdasdasdasdrew","200","img");
              }

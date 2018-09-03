@@ -30,7 +30,7 @@ export class EditProductComponent implements OnInit {
                 private _httpclient:HttpClient,
                 private _route:ActivatedRoute,
                 private _router:Router,
-                private _uploadFile:UploadFileService,
+                public _uploadFile:UploadFileService,
                 private _productosService:ProductosService
 
 
