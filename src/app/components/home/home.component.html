@@ -7,18 +7,20 @@
 
       <h2>  {{ getTitle() }} </h2>
 
-      <h5>Publish the car you want to sell, edit or remove your advertisings, with this SPA webapp created with Angular 6 and PHP.</h5>
-      <h6><b>Easy, fast and <u>ASYNCHRONOUS</u>, like Angular knows.</b></h6>
+      <mat-divider></mat-divider>
+
+      <h5 [ngStyle]="{'text-align':'center'}">Publish the car you want to sell, edit or remove your advertisings, with this SPA webapp created with Angular 6 and PHP.</h5>
+      <h6 [ngStyle]="{'text-align':'center'}"><b>Easy, fast and <u>ASYNCHRONOUS</u>, like Angular knows.</b></h6>
 
       <br/>
 
-      <p>
+      <div [ngStyle]="{'text-align':'center'}">
 
           <button mat-raised-button [ngStyle]="{'background-color':'#9575CD','color':'#fff','margin-right':'1em'}" routerLink="/all-products" >View all cars</button>
           <button mat-raised-button [ngStyle]="{'background-color':'#512DA8','color':'#fff','margin-right':'1em'}"routerLink="/create-product" >Add products</button>
 
 
-      </p>
+      </div>
 
     </div><!--jumbotron-->
   </div><!--div class lg 8-->
