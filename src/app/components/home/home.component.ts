@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor() {
 
-    this.setTitle("Welcome to our Products webapp");
+    this.setTitle("Welcome to our cars selling (fake) webapp");
    }
 
   ngOnInit() {

@@ -68,7 +68,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
        <textarea matInput placeholder="Write a short description please" name="description" maxlength="2000" #descripcion="ngModel" pattern=".{10,2000}" [(ngModel)]="_createProduct.productToInsert.descripcion" cols="40" rows="3" required></textarea> <br/>
       </mat-form-field>
 
-      <div [ngClass]="{'TopLength': _createProduct.productToInsert.descripcion != NULL && _createProduct.productToInsert.descripcion.length==2000}">{{_createProduct.productToInsert.descripcion.length}}/2000</div>
+      <div [ngClass]="{'TopLength':  _createProduct.productToInsert.descripcion.length==2000}">{{_createProduct.productToInsert.descripcion.length}}/2000</div>
 
 
 

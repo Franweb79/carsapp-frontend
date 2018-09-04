@@ -7,12 +7,15 @@
 
       <h2>  {{ getTitle() }} </h2>
 
-      <p>Manage your products with this SPA webapp created with Angular 6</p>
+      <h5>Publish the car you want to sell, edit or remove your advertisings, with this SPA webapp created with Angular 6 and PHP.</h5>
+      <h6><b>Easy, fast and <u>ASYNCHRONOUS</u>, like Angular knows.</b></h6>
+
+      <br/>
 
       <p>
 
-          <a routerLink="/all-products" class ="btn btn-lg btn-primary">View products</a>
-          <a routerLink="/create-product" class ="btn btn-lg btn-success">Add products</a>
+          <button mat-raised-button [ngStyle]="{'background-color':'#9575CD','color':'#fff','margin-right':'1em'}" routerLink="/all-products" >View all cars</button>
+          <button mat-raised-button [ngStyle]="{'background-color':'#512DA8','color':'#fff','margin-right':'1em'}"routerLink="/create-product" >Add products</button>
 
 
       </p>
