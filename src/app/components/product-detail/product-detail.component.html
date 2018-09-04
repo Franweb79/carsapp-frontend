@@ -1,61 +1,70 @@
 
 <br/>
 
-<div  *ngIf="!_view_product.productoAMostrar;else plantillaProducto">Loading product...</div>
+<div class="row">
 
-<ng-template #plantillaProducto>
+  <div  *ngIf="!_view_product.productoAMostrar;else plantillaProducto">Loading product...</div>
 
-    
-    <div class="col-lg-3">
-
-        <div *ngIf="_view_product.productoAMostrar.imagen !=null;else noImageTemplate">
-
-            <img src="{{_view_product.imageServerUrl}}/{{_view_product.productoAMostrar.imagen}}" alt="product_image" class="imageStyle"/>
-        </div>
-      
-        <ng-template #noImageTemplate>
-      
-            <div>
-      
-                <img src="{{_view_product.imageServerUrl}}/no-image-available.JPG" alt="no_image" class="imageStyle"/>
-      
-      
-            </div>
-        </ng-template>  
-
-    </div>
-
-    <div class="col-lg-9">
-
-        <h1>{{_view_product.productoAMostrar.nombre}}</h1>
-
-        
-
-        <h3><strong>{{_view_product.productoAMostrar.precio}} €.</strong></h3>
-        
-      <mat-divider [ngStyle]="{'color':'#5E35B1'}" ></mat-divider>
-
-      <br/>
-      <br/>
-
-      
-      <div [ngStyle]="{'word-wrap':'break-word','font-size':'1.5em'}">{{_view_product.productoAMostrar.descripcion}}</div>
-
-      <br/>
-      <br/>
-
-      <button mat-raised-button color="primary" routerLink="/all-products">Back to List</button>
+  <ng-template #plantillaProducto>
 
 
-    </div>
+      <div class="col-lg-3">
 
-   
+          <div *ngIf="_view_product.productoAMostrar.imagen !=null;else noImageTemplate">
 
- 
+              <img src="{{_view_product.imageServerUrl}}/{{_view_product.productoAMostrar.imagen}}" alt="product_image" class="imageStyle"/>
+          </div>
 
-  
+          <ng-template #noImageTemplate>
+
+              <div>
+
+                  <img src="{{_view_product.imageServerUrl}}/no-image-available.JPG" alt="no_image" class="imageStyle"/>
+
+
+              </div>
+          </ng-template>
+
+      </div>
+
+      <div class="col-lg-9">
+
+          <h1 [ngStyle]="{'word-wrap':'break-word'}">{{_view_product.productoAMostrar.nombre}}</h1>
 
 
 
-</ng-template>
+          <h3><strong>{{_view_product.productoAMostrar.precio}} €.</strong></h3>
 
+      <!--hueco-->
+
+        <button mat-raised-button color="primary" routerLink="/all-products">Back to List</button>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+  </ng-template>
+
+</div> <!-- row -->
+
+<div class="row">
+
+  <mat-divider [ngStyle]="{'color':'#5E35B1'}" ></mat-divider>
+
+  <br/>
+  <br/>
+
+
+  <div [ngStyle]="{'word-wrap':'break-word','font-size':'1.5em'}">{{_view_product.productoAMostrar.descripcion}}</div>
+
+  <br/>
+  <br/>
+
+</div><!-- row -->
