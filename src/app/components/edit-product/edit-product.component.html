@@ -18,14 +18,14 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
       <label> New name of the product (required):
        
-        <span *ngIf="!nombre.valid && nombre.touched && productToUpdate.nombre.length != 0" class="label label-danger"> 3-100 characters please</span>
+        <span *ngIf="!nombre.valid && nombre.touched && productToUpdate.nombre.length != 0" class="label label-danger"> 3-12 characters please</span>
 
       </label>  
 
       <!--must write [(ngModel)]="blabla" in order to mae it work #nombre="ngModel"-->
 
       <mat-form-field class="col-lg-12">
-        <input type="text" matInput placeholder="Name and model of your car"  name="name" #nombre="ngModel" pattern =".{3,100}"[(ngModel)]="productToUpdate.nombre" required/> <br/>
+        <input type="text" matInput placeholder="Name and model of your car"  name="name" #nombre="ngModel" pattern =".{3,12}"[(ngModel)]="productToUpdate.nombre" required/> <br/>
       </mat-form-field>
 
     
@@ -35,7 +35,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
       <label>
 
-        <span *ngIf="!precio.valid && precio.touched && productToUpdate.precio.length != 0" class="label label-danger">Price is not valid. At least one number please, and only numbers</span>
+        <span *ngIf="!precio.valid && precio.touched && productToUpdate.precio.length != 0" class="label label-danger">Price is not valid. At least one number please, and only numbers and dots.</span>
 
       </label>
 
@@ -53,7 +53,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
     <div class="form-group">
 
 
-     <span *ngIf="!descripcion.valid && descripcion.touched && productToUpdate.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, please</span>
+     <span *ngIf="!descripcion.valid && descripcion.touched && productToUpdate.descripcion.length != 0" class="label label-danger">Mínimun 10 characters, max. 2000 please</span>
 
 
 
@@ -80,7 +80,7 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
       
       
       
-  <button type="submit" mat-raised-button color="primary"  [disabled]="formUpdateProduct.invalid" class ="btn btn-lg btn-success"> Update data of my car </button>
+  <button type="submit" mat-raised-button color="primary"  [disabled]="formUpdateProduct.invalid" class ="btn btn-lg btn-success"> Update data of my car! </button>
   <br/>
 
 </form>
