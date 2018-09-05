@@ -23,12 +23,12 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
       <label>
        
-        <span *ngIf="!nombre.valid && nombre.touched && _createProduct.productToInsert.nombre.length != 0" class="label label-danger"> 3-12 characters please</span>
+        <span *ngIf="!nombre.valid && nombre.touched && _createProduct.productToInsert.nombre.length != 0" class="label label-danger"> 3-15 characters please</span>
 
       </label>
 
       <mat-form-field class="col-lg-12">
-        <input matInput placeholder="Name and model of your car" type="text"  name="name" #nombre="ngModel" pattern =".{3,12}"[(ngModel)]="_createProduct.productToInsert.nombre" required />
+        <input matInput placeholder="Name and model of your car" type="text"  name="name" #nombre="ngModel" pattern =".{3,15}"[(ngModel)]="_createProduct.productToInsert.nombre" required />
       </mat-form-field>
 
       <!--must write [(ngModel)]="blabla" in order to mae it work #nombre="ngModel"-->
