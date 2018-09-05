@@ -1,20 +1,23 @@
 
-<h3>{{title}}</h3>
 
-<!--required doent work
-https://stackoverflow.com/questions/44213789/angular-validation-with-required-not-working
-
-
--->
-
-<p>
-  Please fill the data you want to update.
-</p>
 
 
 <form #formUpdateProduct="ngForm" (ngSubmit)="updateProduct()" class="col-lg-6" id="form-update-producto-id">
 
-    <div class="form-group">
+  <h3>{{title}}</h3>
+
+  <!--required doent work
+  https://stackoverflow.com/questions/44213789/angular-validation-with-required-not-working
+
+
+  -->
+
+  <p>
+    Please fill the data you want to update.
+  </p>
+
+
+  <div class="form-group">
 
       <label> New name of the product (required):
        

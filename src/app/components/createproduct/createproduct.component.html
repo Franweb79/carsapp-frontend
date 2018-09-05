@@ -1,11 +1,4 @@
-<p>
 
-  {{_createProduct.errorMessage}}
-
-  
-</p>
-
-<h3>{{title}}</h3>
 
 
 <!--required doent work
@@ -17,7 +10,16 @@ https://stackoverflow.com/questions/44213789/angular-validation-with-required-no
 
 <form #formCreateProduct="ngForm" (ngSubmit)="_createProduct.createProduct()" class="col-lg-6" id="form-crear-producto-id">
 
-    <div class="form-group" >
+  <p>
+
+    {{_createProduct.errorMessage}}
+
+
+  </p>
+
+  <h3>{{title}}</h3>
+
+  <div class="form-group" >
 
 
 

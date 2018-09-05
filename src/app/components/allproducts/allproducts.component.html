@@ -1,4 +1,4 @@
-<h3 [ngStyle]="{'text-align':'center'}"> {{title}}</h3>
+<h3 [ngStyle]="{'text-align':'center','color':'#fff'}"> {{title}}</h3>
 
 
 
@@ -21,7 +21,7 @@
 
               <div class="caption">
 
-                  <div><h3>{{product.nombre}}</h3></div>
+                  <div [ngStyle]="{'word-wrap':'break-word'}"><h3>{{product.nombre}}</h3></div>
 
                   <p *ngIf="product.precio != 0;else noPriceTemplate" ><strong>{{product.precio}} €.</strong></p>
         

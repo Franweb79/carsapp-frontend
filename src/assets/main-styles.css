@@ -1,3 +1,11 @@
+
+form{
+  background-color:rgba(255,255,255,0.9) ;
+  margin-top:1em;
+  margin-bottom:1em;
+  padding-bottom:1em;
+}
+
 #menuId{
   background: #5E35B1;
   color:#fff;
@@ -38,6 +46,12 @@
     line-height:50px; /*to set the title to the moddle, since header line height is 90px, more or less the middle then*/
     font-weight: bold;
     font-size: 30px;
+}
+
+#main{
+  background-image:url('images/football.jpg') ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #nav{
